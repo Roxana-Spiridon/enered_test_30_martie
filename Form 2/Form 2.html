@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Form 2</title>
+    <style>
+        body {
+            background-color: #9966ff;
+            margin: 0 auto;
+            font-family: helvetica;
+        }
+
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            position: relative;
+            background-color: white;
+            margin: 0 auto;
+            margin-top: 50px;
+            padding-right: 50px;
+            padding-left: 50px;
+            padding-bottom: 50px;
+            width: 700px;
+            border-radius: 10px;
+            box-shadow: -1px 52px 25px -34px rgba(0, 0, 0, 0.75);
+        }
+
+        .header-tabs {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-sizing: border-box;
+            padding-left: 30px;
+            height: 100px;
+            width: 100%;
+        }
+
+        .company-name {
+            font-size: 25px;
+            font-weight: bold;
+            color: #9966ff;
+        }
+
+        .center-container {
+            width: 100%;
+            padding-left: 75px;
+        }
+
+        .header-text {
+            line-height: 70px;
+            font-size: 15px;
+            text-align: center;
+            color: rgb(180, 173, 173);
+            margin-right: 10px;
+            box-sizing: border-box;
+        }
+
+        .header-text.purple-text {
+            color: #9966ff;
+        }
+
+        .right-arrow:after {
+            content: "\2b9e";
+            transform: translateY(-50%);
+            font-size: 12px;
+            line-height: 20px;
+            padding-left: 5px;
+        }
+
+        .shopping-cart {
+            width: 27px;
+        }
+
+        .form-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f8f8f8;
+            padding: 15px 30px;
+            width: 100%;
+            height: 100%;
+            border-radius: 4px;
+            border: 1.5px solid rgb(214, 214, 214);
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+
+        .container.container-bottom-margin {
+            margin-bottom: 30px;
+        }
+
+        .container.left-container {
+            margin-right: 10px;
+        }
+
+        .right-container {
+            margin-left: 10px;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        form {
+            width: 100%;
+            height: 100%;
+            /* margin-top: 200px; */
+        }
+
+        .label-container {
+            display: inline-block;
+            width: 100%;
+            margin-right: 18px;
+        }
+
+        .label-container:last-child {
+            margin-right: 0;
+        }
+
+        .fieldset {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border: 0;
+            margin-bottom: 10px;
+        }
+
+        .fieldset-header {
+            font-size: 18px;
+            color: black;
+            text-align: center;
+            padding: 15px 0;
+            margin: 0 auto;
+        }
+
+        .fieldset-text {
+            font-size: 13px;
+            color: rgb(180, 173, 173);
+            padding-left: 10px;
+        }
+
+        input {
+            display: inline-block;
+        }
+
+        input.purple-text {
+            color: #9966ff;
+        }
+
+        input:focus {
+            outline: 1px solid #9966ff;
+        }
+
+        label.blue-text {
+            font-size: 13px;
+        }
+
+        .input-element {
+            height: 30px;
+            box-sizing: border-box;
+            width: 100%;
+            border-radius: 2px;
+            border: 1px solid rgb(180, 173, 173);
+            margin-top: 5px;
+            font-weight: bold;
+            padding-left: 5px;
+        }
+
+        .wide-input {
+            width: 212%;
+        }
+
+        .with-top-margin {
+            margin-top: 40px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 15px;
+        }
+
+        .button {
+            background-color: white;
+            padding: 12px;
+            font-weight: bold;
+            font-size: 12px;
+            border: 1px solid rgb(180, 173, 173);
+            color: rgb(180, 173, 173);
+            border-radius: 2px;
+            width: 35%;
+            height: 60px;
+            cursor: pointer;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            cursor: pointer;
+        }
+
+        .span-bold-text {
+            font-weight: bold;
+            color: grey;
+        }
+
+        p {
+            margin: 0 auto;
+        }
+
+        .button:hover {
+            background-color: #9966ff;
+            border: 1px solid #3c0d99;
+        }
+
+        .button:hover .text-button1 {
+            color: white;
+        }
+
+        .button:hover .text-button2 {
+            color: #3c0d99;
+        }
+
+        .text-button1 {
+            font-size: 40px;
+            color: #9966ff;
+            text-align: center;
+        }
+
+        .currency {
+            font-size: 22px;
+        }
+
+        .text-button2 {
+            font-size: 16px;
+            color: grey;
+            text-align: center;
+        }
+
+        .right-container .header {
+            line-height: 70px;
+            color: white;
+            font-size: 15px;
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+
+        .bottom-button {
+            width: 100%;
+            font-size: 17px;
+            color: white;
+            background-color: #9966ff;
+            text-align: center;
+            border-radius: 4px;
+            border: 1px solid #3c0d99;
+            margin-top: 24px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="header-tabs">
+            <span class="company-name">SHPPNG</span>
+            <div class="center-container">
+                <span class="header-text right-arrow">Shopping Bag</span>
+                <span class="header-text purple-text right-arrow">Checkout</span>
+                <span class="header-text">Confirmation</span>
+            </div>
+            <img class="shopping-cart" src="shopping-cart.svg">
+        </div>
+        <div class="form-container">
+            <div class="container left-container">
+                <form>
+                    <div class="div-fieldset">
+                        <h1 class="fieldset-header">Personal information</h1>
+                        <div class="fieldset">
+                            <span class="label-container">
+                                <label>
+                                    <span class="fieldset-text">First Name</span>
+                                    <input class="input-element" type="text" name="fname" id="first-name">
+                                </label>
+                            </span>
+                            <span class="label-container">
+                                <label>
+                                    <span class="fieldset-text">Last Name</span>
+                                    <input class="input-element" type="text" name="lname" id="last-name">
+                                </label>
+                            </span>
+                        </div>
+
+                        <div class="fieldset">
+                            <span class="label-container">
+                                <label>
+                                    <span class="fieldset-text">Email Adress</span>
+                                    <input class="input-element" type="email" name="email" id="email">
+                                </label>
+                            </span>
+                        </div>
+
+                        <div class="fieldset">
+                            <span class="label-container wide-input">
+                                <label>
+                                    <span class="fieldset-text">Street</span>
+                                    <input class="input-element" type="text" name="street" id="street">
+                                </label>
+                            </span>
+                        </div>
+
+                        <div class="fieldset">
+                            <span class="label-container">
+                                <label>
+                                    <span class="fieldset-text">City</span>
+                                    <input class="input-element" type="text" name="city" id="city">
+                                </label>
+                            </span>
+                            <span class="label-container">
+                                <label>
+                                    <span class="fieldset-text">Country</span>
+                                    <select class="input-element">
+                                        <option value="value a">A</option>
+                                        <option value="value B">B</option>
+                                        <option value="value C">C</option>
+                                    </select>
+                                </label>
+                            </span>
+                        </div>
+
+                        <div class="fieldset">
+                            <span class="label-container">
+                                <label>
+                                    <span class="fieldset-text">Phone number</span>
+                                    <input class="input-element purple-text" type="text" name="phone" id="phone">
+                                </label>
+                            </span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="right-container">
+                <div class="container container-bottom-margin">
+                    <form>
+                        <div class="div-fieldset">
+                            <h1 class="fieldset-header">Delivery</h1>
+                            <span class="fieldset-text">Delivery fee</span>
+                            <div class="button-container">
+                                <div class="button">
+                                    <p class="text-button1">0<sup class="currency">$</sup>
+                                    </p>
+                                    <p class="text-button2">3-4 weeks</p>
+                                </div>
+                                <div class="button">
+                                    <p class="text-button1">5<sup class="currency">$</sup>
+                                    </p>
+                                    <p class="text-button2">2-5 days</p>
+                                </div>
+                            </div>
+                            <p class="fieldset-text">Estimated delivery date:
+                                <span class="span-bold-text"> August 4th.</span>
+                            </p>
+                            <p class="fieldset-text">Every package has a tracking number.</p>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="container-checkbox">
+                    <input name="checkbox1" class="checkbox" id="checkbox1" type="checkbox">
+                    <label for="checkbox1" class="fieldset-text">
+                        Subscribe to our newsletter
+                    </label>
+                </div>
+                <div class="container-checkbox">
+                    <input name="checkbox2" class="checkbox" id="checkbox2" type="checkbox">
+                    <label for="checkbox2" class="fieldset-text">
+                        Create an account
+                    </label>
+                </div>
+
+                <button class="bottom-button" type="button">Confirm my order</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Form 1</title>
+    <style>
+        body {
+            background-color: #dfe1ed;
+            margin: 0 auto;
+            font-family: helvetica;
+        }
+
+        .main-container {
+            position: relative;
+            background-color: white;
+            margin: 0 auto;
+            margin-top: 50px;
+            width: 1000px;
+            height: 700px;
+        }
+
+        .left-container {
+            display: flex;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: white;
+            width: 75%;
+            height: 700px;
+        }
+
+        .right-container {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: #313a73;
+            width: 25%;
+            height: 700px;
+        }
+
+        .header-tabs {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            box-sizing: border-box;
+            padding-left: 100px;
+            padding-right: 100px;
+            top: 0;
+            left: 0;
+            height: 70px;
+            width: 100%;
+        }
+
+        .header-text {
+            line-height: 70px;
+            font-size: 13px;
+            text-align: center;
+            color: rgb(180, 173, 173);
+            margin-right: 20px;
+            width: 180px;
+            box-sizing: border-box;
+            border-bottom: 1.2px solid rgb(180, 173, 173);
+            transition: all 0.1s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+        }
+
+        .blue-text {
+            color: #313a73;
+            font-weight: bold;
+        }
+
+        .header-text:first-child {
+            font-size: 15px;
+            border-bottom: 1.5px solid #3aa9f1;
+        }
+
+        .header-text:last-child {
+            margin-right: 0;
+        }
+
+        .header-text:hover {
+            font-size: 15px;
+            color: #313a73;
+            border-bottom: 1.5px solid #3aa9f1;
+            font-weight: bold;
+        }
+
+        .label-container {
+            display: inline-block;
+            width: 100%;
+            margin-right: 18px;
+        }
+
+        .label-container:last-child {
+            margin-right: 0;
+        }
+
+        form {
+            width: 100%;
+            height: 100%;
+            margin-top: 200px;
+        }
+
+        .div-fieldset {
+            width: 100%;
+            /* height: 22%; */
+            top: 50px;
+            margin-bottom: 40px;
+        }
+
+        .fieldset1 {
+            height: 100%;
+            width: 100%;
+            padding-left: 100px;
+            padding-right: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-sizing: border-box;
+            border: 0;
+            margin-bottom: 20px;
+        }
+
+        .fieldset2 {
+            height: 75%;
+        }
+
+
+        .fieldset-text {
+            font-size: 13px;
+            color: rgb(180, 173, 173);
+        }
+
+        input {
+            display: inline-block;
+        }
+
+        label.blue-text {
+            font-size: 13px;
+        }
+
+        .input-element {
+            height: 30px;
+            box-sizing: border-box;
+            width: 100%;
+            border-radius: 2px;
+            border: 1px solid rgb(180, 173, 173);
+            margin-top: 5px;
+            color: #313a73;
+            font-weight: bold;
+            padding-left: 5px;
+        }
+
+        .line {
+            border: 0.5px solid rgb(180, 173, 173);
+            bottom: 0px;
+            width: 74%;
+            margin-top: 40px;
+            box-sizing: border-box;
+        }
+
+        .div-fieldset2 {
+            display: flex;
+            justify-content: center;
+        }
+
+        .wide-input {
+            width: 212%;
+        }
+
+        .container-checkbox {
+            padding-left: 100px;
+            padding-right: 100px;
+            margin-bottom: 40px;
+        }
+
+        .with-top-margin {
+            margin-top: 40px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            padding-left: 100px;
+            padding-right: 100px;
+        }
+
+        .button {
+            background-color: white;
+            padding: 12px;
+            font-weight: bold;
+            font-size: 12px;
+            border: 1px solid rgb(180, 173, 173);
+            color: rgb(180, 173, 173);
+            padding-left: 30px;
+            padding-right: 30px;
+            border-radius: 2px;
+            width: 33%;
+            cursor: pointer;
+        }
+
+        .button.green-button, .button:hover {
+            background-color: rgb(40, 153, 40);
+            color: white;
+            border: 1px solid rgb(32, 121, 32);
+        }
+
+        .right-container .header {
+            line-height: 70px;
+            color: white;
+            font-size: 15px;
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+
+        .product {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            color: #3aa9f1;
+            padding-left: 40px;
+            padding-right: 40px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            border-top: 2px solid #6f7dd4;
+        }
+
+        .product .product-price {
+            color: #6f7dd4;
+        }
+
+        .product.shipping {
+            color: #6f7dd4;
+        }
+
+        .product.total, .product.total.product-price{
+            color: white;
+            border-top: none;
+        }
+
+    
+    </style>
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="left-container">
+            <div class="header-tabs">
+                <span class="header-text blue-text">Shipping</span>
+                <span class="header-text">Payment</span>
+                <span class="header-text">Confirmations</span>
+            </div>
+
+            <form>
+                <div class="div-fieldset">
+                    <div class="fieldset1">
+                        <span class="label-container">
+                            <label>
+                                <span class="fieldset-text">First Name</span>
+                                <input class="input-element" type="text" name="fname" id="first-name">
+                            </label>
+                        </span>
+                        <span class="label-container">
+                            <label>
+                                <span class="fieldset-text">Last Name</span>
+                                <input class="input-element" type="text" name="lname" id="last-name">
+                            </label>
+                        </span>
+                        <span class="label-container">
+                            <label>
+                                <span class="fieldset-text">Email</span>
+                                <input class="input-element" type="email" name="email" id="email">
+                            </label>
+                        </span>
+                    </div>
+                    <hr class="line" />
+                </div>
+                <div class="div-fieldset">
+                    <div class="fieldset1 fieldset2">
+                        <span class="label-container">
+                            <label>
+                                <span class="fieldset-text">Company</span>
+                                <input class="input-element" type="text" name="company" id="company">
+                            </label>
+                        </span>
+                        <span class="label-container wide-input">
+                            <label>
+                                <span class="fieldset-text">Adress</span>
+                                <input class="input-element" type="text" name="adress" id="adress">
+                            </label>
+                        </span>
+                    </div>
+                    <div class="fieldset1 fieldset2">
+                        <span class="label-container">
+                            <label>
+                                <span class="fieldset-text">Country</span>
+                                <select class="input-element">
+                                    <option value="value a">A</option>
+                                    <option value="value B">B</option>
+                                    <option value="value C">C</option>
+                                </select>
+                            </label>
+                        </span>
+                        <span class="label-container">
+                            <label>
+                                <span class="fieldset-text">City</span>
+                                <input class="input-element" type="text" name="city" id="city">
+                            </label>
+                        </span>
+                        <span class="label-container">
+                            <label>
+                                <span class="fieldset-text">ZIP Code</span>
+                                <input class="input-element" type="text" name="zcode" id="zcode">
+                            </label>
+                        </span>
+                    </div>
+                </div>
+                <div class="div-fieldset">
+                    <div class="container-checkbox">
+                        <input name="checkbox1" class="checkbox" id="checkbox1" type="checkbox">
+                        <label for="checkbox1" class="blue-text">
+                            My shipping and billing information is the same.
+                        </label>
+                    </div>
+                    <hr class="line" />
+                    <div class="container-checkbox with-top-margin">
+                        <input name="checkbox2" class="checkbox" id="checkbox2" type="checkbox">
+                        <label for="checkbox2" class="blue-text">
+                            Create a password for easier account access
+                        </label>
+                    </div>
+                    <hr class="line" />
+                </div>
+                <div class="button-container">
+                    <button class="button" type="button">RETURN TO STORE</button>
+                    <button class="button green-button" type="submit">CONTINUE</button>
+                </div>
+            </form>
+        </div>
+        <div class="right-container">
+            <div class="header">
+                <span>Shopping Cart</span>
+            </div>
+            <div class="product">
+                <span class="product-name">Product 1</span>
+                <span class="product-price">$20</span>
+            </div>
+            <div class="product">
+                <span class="product-name">Product 2</span>
+                <span class="product-price">$20</span>
+            </div>
+            <div class="product">
+                <span class="product-name">Product 3</span>
+                <span class="product-price">$20</span>
+            </div>
+            <div class="product">
+                <span class="product-name">Product 4</span>
+                <span class="product-price">$20</span>
+            </div>
+            <div class="product">
+                <span class="product-name">Product 5</span>
+                <span class="product-price">$20</span>
+            </div>
+            <div class="product">
+                <span class="product-name">Product 6</span>
+                <span class="product-price">$20</span>
+            </div>
+            <div class="product shipping">
+                <span class="product-name">Shipping</span>
+                <span class="product-price">$20</span>
+            </div>
+            <div class="product total">
+                <span class="product-name">Total</span>
+                <span class="product-price">$140</span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
